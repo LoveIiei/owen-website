@@ -52,17 +52,17 @@ export const Projects = () => {
                             {({ isVisible }) =>
                                 <div className={isVisible ? "animate__animated animate__fadeIn": ""}>
                                     <h2>Projects</h2>
-                                    <p>Below I will present you some of the projects I have been working on, either I developed or followed a tutorial and made my own changes. You can always check them out on my github repo, and feel free to leave your comments. Enjoy! Tab1: Coding Projects. Tab2: Other Achievements, Tab3: My Life</p>
+                                    <p>Below I will present you some of the projects I have been working on, either I developed or followed a tutorial and made my own changes. You can always check them out on my github repo, and feel free to leave your comments. Enjoy!</p>
                                     <Tab.Container id="projects-tabs" defaultActiveKey="first">
                                         <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                                             <Nav.Item>
-                                                <Nav.Link eventKey="first">Tab 1</Nav.Link>
+                                                <Nav.Link eventKey="first">Coding Projects</Nav.Link>
                                             </Nav.Item>
                                             <Nav.Item>
-                                                <Nav.Link eventKey="second">Tab 2</Nav.Link>
+                                                <Nav.Link eventKey="second">Other Achievements</Nav.Link>
                                             </Nav.Item>
                                             <Nav.Item>
-                                                <Nav.Link eventKey="third">Tab 3</Nav.Link>
+                                                <Nav.Link eventKey="third">My Life</Nav.Link>
                                             </Nav.Item>
                                         </Nav>
                                         <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>

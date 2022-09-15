@@ -3,6 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import headerImg from "../assets/img/header-img.svg";
 import { ArrowRightCircle } from 'react-bootstrap-icons';
 import TrackVisibility from 'react-on-screen';
+import {useNavigate} from "react-router-dom";
 
 export const Banner = () => {
     const [loopNum, setLoopNum] = useState(0);
@@ -10,8 +11,16 @@ export const Banner = () => {
     const [text, setText] = useState('');
     const [delta, setDelta] = useState(300 - Math.random() * 100);
     const [index, setIndex] = useState(1);
-    const toRotate = [ "Student", "Backend Developer", "Java/Python/Go" ];
+    const toRotate = ["Student", "Backend Developer", "Java/Python/Go"];
     const period = 2000;
+
+    function handleScroll() {
+        window.scroll({
+            top: document.body.offsetHeight,
+            left: 0,
+            behavior: 'smooth',
+        });
+    }
 
     useEffect(() => {
         let ticker = setInterval(() => {
@@ -58,7 +67,7 @@ export const Banner = () => {
                                     <h1>{`Hello, I'm Owen`} <span className="txt-rotate" data-rotate='[ "Student", "Backend Developer", "Java/Python/Go" ]'><span className="wrap">{text}</span></span></h1>
                                     <p>Hi there, this is Owen Hua. I am a high school student in Canada who has a lot of interests in programming. I self-studied Java, Python, C/C++, Go and Javascript, as well as developed some projects with these amazing languages.
                                     </p>
-                                    <button onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button>
+                                    <button onClick={handleScroll}>Let's Connect <ArrowRightCircle size={25} /></button>
                                 </div>}
                         </TrackVisibility>
                     </Col>
@@ -66,7 +75,7 @@ export const Banner = () => {
                         <TrackVisibility>
                             {({ isVisible }) =>
                                 <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
-                                    <img src={headerImg} alt="Header Img"/>
+                                    <img src={headerImg} alt="Header Img" />
                                 </div>}
                         </TrackVisibility>
                     </Col>

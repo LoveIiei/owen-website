@@ -13,7 +13,10 @@ export function ContactUs() {
         setButtonText("Sending...");
         emailjs.sendForm('service_9a8ca9o', 'template_risk1dy', e.target, 'mAcww5AkB8gtz7fZO')
             .then((result) => {
-                setButtonText("Success");  //This is if you still want the page to reload (since e.preventDefault() cancelled that behavior) 
+                setButtonText("Success");
+                setTimeout(function () {
+                    window.location.reload();
+                }, 1000);  //This is if you still want the page to reload (since e.preventDefault() cancelled that behavior) 
             }, (error) => {
                 setButtonText("Failed");
             });
